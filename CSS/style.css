@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo+Play:wght@300;400;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+}
+
+body {
+    font-family: 'Cairo Play', sans-serif;
+    background: url(./background.jpg) center center/cover no-repeat fixed;
+    direction: rtl;
+}
+
+.player {
+    background: linear-gradient(to right, #000, #434343);
+    position: sticky;
+    top: 0;
+    padding: 20px;
+    margin: 10px 0;
+    border-radius: 20px;
+}
+
+.player .ayah {
+    text-align: center;
+    font-size: 20px;
+    color: #fff;
+    padding: 10px 0;
+}
+
+.player audio {
+    width: 100%;
+    height: 40px;
+    margin: 15px 0;
+    border-radius: 20px;
+    background-color: #fff7f7;
+}
+
+.player .buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.buttons .icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #fff;
+    display: grid;
+    place-items: center;
+    color: #23162f;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.surah>div {
+    color: #23162f;
+    background-color: #fff;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
+    font-size: 20px;
+    width: calc(100% - 220px);
+    transition: 0.3 color ease;
+    cursor: pointer;
+    margin:10px 80px;
+    padding: 10px 20px;
+    position: relative;
+    font-weight: bold;
+    counter-increment: surah-counter;
+    border-radius: 20px;
+}
+
+.surah>div::after {
+    content: counter(surah-counter);
+    position: absolute;
+    height: 80px;
+    width: 80px;
+    left: -90px;
+    top: 50%;
+    
+    transform: translateY(-50%);
+    border-radius: 50%;
+    line-height: 80px;
+    font-size: 25px;
+    text-align: center;
+    margin: auto;
+    background-color: inherit;
+    transition: inherit;
+    box-shadow: inherit;
+}
+
+.surah>div::before {
+    content: "";
+    position: absolute;
+    border: 7px solid transparent;
+    top: 50%;
+    border-right-color:#23162f ;
+    transform: translateY(-50%);
+    left: -14px;
+   
+}
+.surah>div:hover,
+.surah>div:hover::after
+{
+   background: linear-gradient(to bottom , #000 ,#434343);
+   color: white;
+}
